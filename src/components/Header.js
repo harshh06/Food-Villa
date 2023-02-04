@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpeg";
 
@@ -20,6 +21,9 @@ const Header = () => {
     // return <>{Title()}</>; // can also call fucntional component like this
 
     const [authenticateStatus, setAuthenticateStatus] = useState("Login");
+
+    const cartItems = useSelector((store) => store.cart.items);
+
     return (
         <div className="flex justify-between  my-2 bg-blend-soft-light border border-orange-100">
             <Title />
@@ -36,6 +40,9 @@ const Header = () => {
                     </li>
                     <li className="px-5 hover:text-orange-400">
                         <Link to={"/instamart"}>Instamart</Link>
+                    </li>
+                    <li className="px-5 hover:text-orange-400">
+                        <Link to={"/cart"}>Cart {cartItems.length} items</Link>
                     </li>
                 </ul>
             </div>

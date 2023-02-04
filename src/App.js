@@ -11,6 +11,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/ProfileClass";
 import ProfileFunctionalComponent from "./components/Profile";
 import Instamart from "./components/Instamart";
+import { Provider } from "react-redux";
+import store from "../utils/store";
+import Cart from "./components/Cart";
 {
     /**
      * Header (Navabar ListItems)
@@ -28,11 +31,11 @@ import Instamart from "./components/Instamart";
 
 const AppLayout = () => {
     return (
-        <>
+        <Provider store={store}>
             <Header />
             <Outlet />
             <Footer />
-        </>
+        </Provider>
     );
 };
 
@@ -69,6 +72,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/instamart",
                 element: <Instamart />,
+            },
+            {
+                path: "/cart",
+                element: <Cart />,
             },
         ],
     },
