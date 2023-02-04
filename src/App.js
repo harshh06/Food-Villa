@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/ProfileClass";
 import ProfileFunctionalComponent from "./components/Profile";
+import Instamart from "./components/Instamart";
 {
     /**
      * Header (Navabar ListItems)
@@ -64,6 +65,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/menu/:restaurantId",
                 element: <RestaurantMenu />,
+            },
+            {
+                path: "/instamart",
+                element: <Instamart />,
             },
         ],
     },

@@ -35,7 +35,7 @@ const Header = () => {
                         <Link to={"/contact"}>Contact</Link>
                     </li>
                     <li className="px-5 hover:text-orange-400">
-                        <Link to={"/cart"}>Cart</Link>
+                        <Link to={"/instamart"}>Instamart</Link>
                     </li>
                 </ul>
             </div>
